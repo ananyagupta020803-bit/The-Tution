@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE TUTION - Quality Education for Classes 1-12</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease;
+        }
+
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* About Section */
+        .about {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        .experience-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        /* Services Section */
+        .services {
+            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, #667eea33 0%, #764ba233 100%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .services h2 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .services-subtitle {
+            text-align: center;
+            color: #555;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+            border: 2px solid #667eea;
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            filter: drop-shadow(2px 2px 8px rgba(102, 126, 234, 0.3));
+        }
+
+        .service-card h3 {
+            color: #2d3748;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .grade-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            font-size: 1.8rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .instructor {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-block;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .subjects-list {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .subjects-list strong {
+            color: #764ba2;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Home Tutoring - Full Width Feature */
+        .home-tutoring {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+            border: none;
+        }
+
+        .home-tutoring::before {
+            display: none;
+        }
+
+        .home-tutoring:hover {
+            transform: translateY(-10px);
+            border: none;
+        }
+
+        .home-tutoring .service-icon {
+            font-size: 5rem;
+            filter: drop-shadow(2px 2px 8px rgba(255, 255, 255, 0.3));
+        }
+
+        .home-tutoring h3 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .home-tutoring p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1rem;
+        }
+
+        .home-tutoring .instructor {
+            background: white;
+            color: #667eea;
+        }
+
+        .tutoring-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-item span {
+            font-size: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cbd5e0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #4a5568;
+            color: #cbd5e0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .about h2,
+            .services h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .home-tutoring {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .grade-highlight {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">THE TUTION</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to THE TUTION</h1>
+        <p>Empowering Students from Grade 1 to 12 with Excellence in Education</p>
+        <button class="cta-button" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
+            Explore Our Services
+        </button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>
+            At THE TUTION, we are dedicated to nurturing academic excellence and building confident learners. 
+            Our experienced educators provide personalized attention to each student, ensuring they grasp concepts 
+            thoroughly and excel in their studies. We offer both in-center and home tutoring options at your 
+            preferred timeline, making quality education accessible and convenient.
+        </p>
+        <div class="experience-badge">
+            ✨ 3+ Years of Teaching Excellence
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="services-container">
+            <h2>Our Services</h2>
+            <p class="services-subtitle">Comprehensive Academic Programs Tailored for Success</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">📚</span>
+                    <h3><span class="grade-highlight">Grade 1-10</span></h3>
+                    <p>Comprehensive coaching for all subjects building strong foundations and developing critical thinking skills.</p>
+                    <div class="subjects-list">
+                        <strong>Subjects Covered:</strong>
+                        Mathematics • Science • English • Social Studies • Hindi & More
+                    </div>
+                    <div class="instructor">Expert Faculty</div>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">📊</span>
+                    <h3><span class="grade-highlight">Grade 11-12</span><br>Commerce Stream</h3>
+                    <p>Specialized coaching with in-depth subject knowledge and exam-oriented preparation.</p>
+                    <div class="subjects-list">
+                        <strong>Subjects Covered:</strong>
+                        Accountancy • Business Studies • Economics • Entrepreneurship • English
+                    </div>
+                    <div class="instructor">👩‍🏫 By Ananya Ma'am</div>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🔬</span>
+                    <h3><span class="grade-highlight">Grade 11-12</span><br>Science Stream</h3>
+                    <p>Expert guidance with comprehensive theory and extensive problem-solving for competitive exams.</p>
+                    <div class="subjects-list">
+                        <strong>Subjects Covered:</strong>
+                        Physics • Chemistry • Mathematics
+                    </div>
+                    <div class="instructor">👨‍🏫 By Manan Sir</div>
+                </div>
+
+                <div class="service-card home-tutoring">
+                    <div>
+                        <span class="service-icon">🏠</span>
+                        <h3>Home Tutoring</h3>
+                        <p>Personalized one-on-one education delivered at your doorstep with flexible scheduling to match your convenience.</p>
+                        <div class="instructor">Available for All Grades & Subjects</div>
+                    </div>
+                    <div class="tutoring-features">
+                        <div class="feature-item">
+                            <span>⏰</span>
+                            <div>
+                                <strong>Flexible Timing</strong><br>
+                                Classes at your preferred schedule
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span>👤</span>
+                            <div>
+                                <strong>Personal Attention</strong><br>
+                                One-on-one focused learning
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span>📍</span>
+                            <div>
+                                <strong>Your Location</strong><br>
+                                Comfortable learning at home
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>THE TUTION</h3>
+                <p>Your Partner in Academic Success</p>
+                <p>Quality Education for Classes 1-12</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Our Services</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📍 Ghaziabad, Uttar Pradesh</p>
+                <p>📞 Contact: [Your Phone Number]</p>
+                <p>✉️ Email: [Your Email]</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Our Subjects</h3>
+                <p>All Subjects (1-10)</p>
+                <p>Commerce Stream (11-12)</p>
+                <p>Science Stream (11-12)</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 THE TUTION. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
