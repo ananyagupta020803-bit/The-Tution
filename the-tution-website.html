@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE TUTION - Quality Education for Classes 1-12</title>
+    <title>THE HOME TUTION - Quality Home Education for Classes 4-10</title>
     <style>
         * {
             margin: 0;
@@ -132,9 +132,84 @@
             margin-top: 1rem;
         }
 
+        /* Instructor Profile Section */
+        .instructor-profile {
+            background: #f8f9fa;
+            padding: 5rem 2rem;
+        }
+
+        .instructor-profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .instructor-profile h2 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 800;
+        }
+
+        .profile-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-text h3 {
+            color: #764ba2;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-text p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .credentials {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .credential-icon {
+            font-size: 2rem;
+            filter: drop-shadow(2px 2px 4px rgba(102, 126, 234, 0.3));
+        }
+
+        .credential-details h4 {
+            color: #2d3748;
+            margin-bottom: 0.3rem;
+        }
+
+        .credential-details p {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
         /* Services Section */
         .services {
-            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
             padding: 5rem 2rem;
             position: relative;
             overflow: hidden;
@@ -179,7 +254,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-bottom: 2rem;
         }
@@ -272,8 +347,8 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Home Tutoring - Full Width Feature */
-        .home-tutoring {
+        /* Single Subject Card */
+        .single-subject-card {
             grid-column: 1 / -1;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -287,37 +362,37 @@
             border: none;
         }
 
-        .home-tutoring::before {
+        .single-subject-card::before {
             display: none;
         }
 
-        .home-tutoring:hover {
+        .single-subject-card:hover {
             transform: translateY(-10px);
             border: none;
         }
 
-        .home-tutoring .service-icon {
+        .single-subject-card .service-icon {
             font-size: 5rem;
             filter: drop-shadow(2px 2px 8px rgba(255, 255, 255, 0.3));
         }
 
-        .home-tutoring h3 {
+        .single-subject-card h3 {
             color: white;
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
 
-        .home-tutoring p {
+        .single-subject-card p {
             color: rgba(255, 255, 255, 0.95);
             font-size: 1.1rem;
         }
 
-        .home-tutoring .instructor {
+        .single-subject-card .instructor {
             background: white;
             color: #667eea;
         }
 
-        .tutoring-features {
+        .subject-features {
             display: flex;
             flex-direction: column;
             gap: 1rem;
@@ -335,6 +410,101 @@
 
         .feature-item span {
             font-size: 2rem;
+        }
+
+        /* Tech Skills Section */
+        .tech-skills {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            padding: 5rem 2rem;
+        }
+
+        .tech-skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tech-skills h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tech-subtitle {
+            text-align: center;
+            color: #cbd5e0;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #667eea;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .skill-card h3 {
+            color: #a78bfa;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .skill-card p {
+            color: #cbd5e0;
+            line-height: 1.8;
+        }
+
+        .tech-list {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tech-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tech-list li {
+            color: #e2e8f0;
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .tech-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
         }
 
         /* Footer */
@@ -401,6 +571,7 @@
 
             nav ul {
                 gap: 1rem;
+                font-size: 0.9rem;
             }
 
             .logo {
@@ -408,7 +579,8 @@
             }
 
             .about h2,
-            .services h2 {
+            .services h2,
+            .tech-skills h2 {
                 font-size: 2rem;
             }
 
@@ -416,7 +588,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .home-tutoring {
+            .single-subject-card {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -428,6 +600,10 @@
             .grade-highlight {
                 font-size: 1.5rem;
             }
+
+            .profile-content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -435,11 +611,13 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">THE TUTION</div>
+            <div class="logo">THE HOME TUTION</div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#instructor">Instructor</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#tech">Tech Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -447,8 +625,8 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h1>Welcome to THE TUTION</h1>
-        <p>Empowering Students from Grade 1 to 12 with Excellence in Education</p>
+        <h1>Welcome to THE HOME TUTION</h1>
+        <p>Personalized Home Education for Classes 4-10 | Expert Guidance at Your Doorstep</p>
         <button class="cta-button" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
             Explore Our Services
         </button>
@@ -458,84 +636,207 @@
     <section id="about" class="about">
         <h2>About Us</h2>
         <p>
-            At THE TUTION, we are dedicated to nurturing academic excellence and building confident learners. 
-            Our experienced educators provide personalized attention to each student, ensuring they grasp concepts 
-            thoroughly and excel in their studies. We offer both in-center and home tutoring options at your 
-            preferred timeline, making quality education accessible and convenient.
+            At THE HOME TUTION, we bring quality education directly to your home. We specialize in providing 
+            personalized, one-on-one tutoring that helps students build strong academic foundations and develop 
+            confidence in their learning journey. Our flexible home tutoring service is designed to accommodate 
+            your schedule while ensuring each student receives focused attention and customized learning experiences 
+            tailored to their unique needs.
         </p>
         <div class="experience-badge">
-            ✨ 3+ Years of Teaching Excellence
+            ✨ 5+ Years of Teaching Excellence
+        </div>
+    </section>
+
+    <!-- Instructor Profile Section -->
+    <section id="instructor" class="instructor-profile">
+        <div class="instructor-profile-container">
+            <h2>Meet Your Instructor</h2>
+            <div class="profile-content">
+                <div class="profile-text">
+                    <h3>Manan Sir</h3>
+                    <p>
+                        With over 5 years of dedicated teaching experience and a strong technical background, 
+                        I bring a unique blend of academic excellence and practical knowledge to every tutoring session. 
+                        My approach combines traditional subject mastery with modern teaching methodologies, ensuring 
+                        students not only understand concepts but also develop critical thinking and problem-solving skills.
+                    </p>
+                    <p>
+                        I am passionate about making learning accessible, engaging, and relevant to today's world, 
+                        whether teaching core subjects or introducing students to the exciting world of technology.
+                    </p>
+                </div>
+                <div class="credentials">
+                    <div class="credential-item">
+                        <span class="credential-icon">🎓</span>
+                        <div class="credential-details">
+                            <h4>B.Tech in Computer Science</h4>
+                            <p>Specialization: Artificial Intelligence & Data Science</p>
+                        </div>
+                    </div>
+                    <div class="credential-item">
+                        <span class="credential-icon">🎓</span>
+                        <div class="credential-details">
+                            <h4>M.Tech in Computer Science</h4>
+                            <p>Advanced Studies in Computing Technologies</p>
+                        </div>
+                    </div>
+                    <div class="credential-item">
+                        <span class="credential-icon">👨‍🏫</span>
+                        <div class="credential-details">
+                            <h4>Teaching Experience</h4>
+                            <p>5+ Years of Academic & Technical Mentoring</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="services-container">
-            <h2>Our Services</h2>
-            <p class="services-subtitle">Comprehensive Academic Programs Tailored for Success</p>
+            <h2>Our Home Tutoring Services</h2>
+            <p class="services-subtitle">Personalized Academic Programs at Your Convenience</p>
             <div class="services-grid">
                 <div class="service-card">
                     <span class="service-icon">📚</span>
-                    <h3><span class="grade-highlight">Grade 1-10</span></h3>
-                    <p>Comprehensive coaching for all subjects building strong foundations and developing critical thinking skills.</p>
+                    <h3><span class="grade-highlight">Grade 4-6</span><br>Foundation Building</h3>
+                    <p>Comprehensive coaching for all subjects, focusing on building strong fundamentals and developing a love for learning during these crucial formative years.</p>
                     <div class="subjects-list">
                         <strong>Subjects Covered:</strong>
-                        Mathematics • Science • English • Social Studies • Hindi & More
-                    </div>
-                    <div class="instructor">Expert Faculty</div>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon">📊</span>
-                    <h3><span class="grade-highlight">Grade 11-12</span><br>Commerce Stream</h3>
-                    <p>Specialized coaching with in-depth subject knowledge and exam-oriented preparation.</p>
-                    <div class="subjects-list">
-                        <strong>Subjects Covered:</strong>
-                        Accountancy • Business Studies • Economics • Entrepreneurship • English
-                    </div>
-                    <div class="instructor">👩‍🏫 By Ananya Ma'am</div>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon">🔬</span>
-                    <h3><span class="grade-highlight">Grade 11-12</span><br>Science Stream</h3>
-                    <p>Expert guidance with comprehensive theory and extensive problem-solving for competitive exams.</p>
-                    <div class="subjects-list">
-                        <strong>Subjects Covered:</strong>
-                        Physics • Chemistry • Mathematics
+                        Mathematics • Science • English • Social Studies • Hindi • EVS & More
                     </div>
                     <div class="instructor">👨‍🏫 By Manan Sir</div>
                 </div>
 
-                <div class="service-card home-tutoring">
-                    <div>
-                        <span class="service-icon">🏠</span>
-                        <h3>Home Tutoring</h3>
-                        <p>Personalized one-on-one education delivered at your doorstep with flexible scheduling to match your convenience.</p>
-                        <div class="instructor">Available for All Grades & Subjects</div>
+                <div class="service-card">
+                    <span class="service-icon">📖</span>
+                    <h3><span class="grade-highlight">Grade 6-10</span><br>Academic Excellence</h3>
+                    <p>In-depth subject coaching with exam-oriented preparation, helping students excel in board examinations and build strong conceptual understanding.</p>
+                    <div class="subjects-list">
+                        <strong>Subjects Covered:</strong>
+                        Mathematics • Science (Physics, Chemistry, Biology) • English • Social Science • Hindi & More
                     </div>
-                    <div class="tutoring-features">
+                    <div class="instructor">👨‍🏫 By Manan Sir</div>
+                </div>
+
+                <div class="service-card single-subject-card">
+                    <div>
+                        <span class="service-icon">🎯</span>
+                        <h3>Single Subject Focused Home Tutoring</h3>
+                        <p>Specialized one-on-one coaching for individual subjects where students need extra attention and support. Perfect for strengthening specific areas and achieving targeted improvement.</p>
+                        <div class="instructor">Available for All Grades (4-10)</div>
+                    </div>
+                    <div class="subject-features">
+                        <div class="feature-item">
+                            <span>📍</span>
+                            <div>
+                                <strong>At Your Home</strong><br>
+                                Convenient doorstep tutoring service
+                            </div>
+                        </div>
                         <div class="feature-item">
                             <span>⏰</span>
                             <div>
-                                <strong>Flexible Timing</strong><br>
-                                Classes at your preferred schedule
+                                <strong>Flexible Schedule</strong><br>
+                                Classes at your preferred timing
                             </div>
                         </div>
                         <div class="feature-item">
                             <span>👤</span>
                             <div>
-                                <strong>Personal Attention</strong><br>
-                                One-on-one focused learning
+                                <strong>Individual Focus</strong><br>
+                                Personalized attention to specific needs
                             </div>
                         </div>
                         <div class="feature-item">
-                            <span>📍</span>
+                            <span>📊</span>
                             <div>
-                                <strong>Your Location</strong><br>
-                                Comfortable learning at home
+                                <strong>Subject Mastery</strong><br>
+                                Deep dive into challenging topics
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Skills Section -->
+    <section id="tech" class="tech-skills">
+        <div class="tech-skills-container">
+            <h2>Technology & Programming Training</h2>
+            <p class="tech-subtitle">Empowering Students with Future-Ready Digital Skills</p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <span class="skill-icon">💻</span>
+                    <h3>Computer Fundamentals</h3>
+                    <p>
+                        Comprehensive introduction to computing, covering essential digital literacy, 
+                        computer operations, software applications, and internet fundamentals to build 
+                        a strong foundation in technology.
+                    </p>
+                    <div class="tech-list">
+                        <ul>
+                            <li>Computer Basics & Hardware</li>
+                            <li>Operating Systems (Windows, Linux)</li>
+                            <li>MS Office Suite Mastery</li>
+                            <li>Internet & Digital Safety</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">🌐</span>
+                    <h3>Website Development</h3>
+                    <p>
+                        Learn to create professional, responsive websites from scratch. Master the core 
+                        technologies of web development including HTML, CSS, and JavaScript, with hands-on 
+                        project-based learning.
+                    </p>
+                    <div class="tech-list">
+                        <ul>
+                            <li>HTML5 & CSS3 Fundamentals</li>
+                            <li>Responsive Web Design</li>
+                            <li>JavaScript Programming</li>
+                            <li>Modern Web Frameworks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">📱</span>
+                    <h3>Frontend Development</h3>
+                    <p>
+                        Advanced training in modern frontend technologies and frameworks. Learn to build 
+                        interactive, dynamic user interfaces with industry-standard tools and best practices 
+                        used by professional developers.
+                    </p>
+                    <div class="tech-list">
+                        <ul>
+                            <li>React.js Development</li>
+                            <li>UI/UX Design Principles</li>
+                            <li>Version Control (Git & GitHub)</li>
+                            <li>Web Performance Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">⚙️</span>
+                    <h3>Web Application Development</h3>
+                    <p>
+                        Complete full-stack web application development training, covering both frontend 
+                        and backend technologies. Learn to build real-world applications with database 
+                        integration and deployment strategies.
+                    </p>
+                    <div class="tech-list">
+                        <ul>
+                            <li>Backend Development Basics</li>
+                            <li>Database Management</li>
+                            <li>API Development & Integration</li>
+                            <li>Application Deployment</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -546,35 +847,38 @@
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>THE TUTION</h3>
+                <h3>THE HOME TUTION</h3>
                 <p>Your Partner in Academic Success</p>
-                <p>Quality Education for Classes 1-12</p>
+                <p>Quality Home Education for Classes 4-10</p>
+                <p>Technology Training for Future Leaders</p>
             </div>
 
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <a href="#home">Home</a>
                 <a href="#about">About Us</a>
-                <a href="#services">Our Services</a>
+                <a href="#instructor">Instructor Profile</a>
+                <a href="#services">Academic Services</a>
+                <a href="#tech">Tech Training</a>
             </div>
 
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <p>📍 Ghaziabad, Uttar Pradesh</p>
-                <p>📞 Contact: [Your Phone Number]</p>
-                <p>✉️ Email: [Your Email]</p>
+                <p>📍 Sharma Niwas Union Bank Road, Chandarbani</p>
+                <p>⏰ Flexible Timing Available</p>
             </div>
 
             <div class="footer-section">
-                <h3>Our Subjects</h3>
-                <p>All Subjects (1-10)</p>
-                <p>Commerce Stream (11-12)</p>
-                <p>Science Stream (11-12)</p>
+                <h3>Our Programs</h3>
+                <p>Grade 4-6 (All Subjects)</p>
+                <p>Grade 6-10 (All Subjects)</p>
+                <p>Single Subject Tutoring</p>
+                <p>Computer & Web Development</p>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 THE TUTION. All Rights Reserved.</p>
+            <p>&copy; 2026 THE HOME TUTION. All Rights Reserved. | Personalized Education at Your Doorstep</p>
         </div>
     </footer>
 </body>
